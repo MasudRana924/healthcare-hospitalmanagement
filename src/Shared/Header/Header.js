@@ -28,7 +28,7 @@ const Header = () => {
                     </Col>
                 </Row>
             </Container>
-            <Navbar className="navbar"  collapseOnSelect expand="lg">
+            <Navbar className="navbar"   collapseOnSelect expand="lg">
                 <Container>
                     <Navbar.Brand href="#home" className=" fs-3">Health<span className=" text-dark"><span className="text-danger fs-1">
                         Surgery</span>Care</span></Navbar.Brand>
