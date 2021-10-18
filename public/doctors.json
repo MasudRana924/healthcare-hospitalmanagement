@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "name": "Adam Zamppa",
+      "desc": "Heart Specialist",
+      "img": "https://image.freepik.com/free-photo/young-male-doctor-white-uniform_176474-86067.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Sonia Patel",
+      "desc": "Cardiology Specialist",
+      "img": "https://image.freepik.com/free-photo/pleased-young-female-doctor-wearing-medical-robe-stethoscope-around-neck-standing-with-closed-posture_409827-254.jpg"
+    },
+    {
+      "id": 3,
+      "name": "John dave",
+      "desc": "Dermatology Specialist",
+      "img": "https://image.freepik.com/free-photo/cheerful-doctor-gesturing-thumb-up_23-2147896156.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Christina Perry ",
+      "desc": "Critical Surgery Specialist",
+      "img": "https://image.freepik.com/free-photo/black-woman-with-stethoscope_1157-15563.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Andrew Jonas",
+      "desc": "General Surgery Specialist",
+      "img": "https://img.freepik.com/free-photo/portrait-successful-young-doctor-showing-thumbs-up_1262-12409.jpg?size=338&ext=jpg"
+    },
+    {
+      "id": 6,
+      "name": "Marry Devine",
+      "desc": "Medical Genetics Specialist",
+      "img": "https://image.freepik.com/free-photo/medical-workers-covid-19-vaccination-concept-confident-professional-doctor-female-nurse-blue-scrubs-stethoscope-show-thumbs-up-assure-guarantee-best-quality-service-clinic_1258-57360.jpg"
+    }
+  ]

@@ -1,0 +1,11 @@
+.image{
+    height:200px;
+    width:100%;
+}
+.card-style{
+    transition: 0.3s;
+   
+}
+.card-style:hover {
+    box-shadow: 0 8px 16px 0 rgba(225, 241, 8, 0.959);
+  }

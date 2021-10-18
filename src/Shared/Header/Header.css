@@ -1,0 +1,7 @@
+.nav-anchor a{
+text-decoration: none;
+color: rgba(25, 25, 112, 0.829);
+}
+.nav-anchor a:hover{
+    color:brown;
+    }
