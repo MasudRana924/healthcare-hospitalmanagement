@@ -2,30 +2,35 @@
     {
       "id": 1,
       "name": "Appendectomy",
+      "cost":"200000",
       "desc": "An appendectomy is the surgical removal of the appendix, a small tube that branches off the large intestine, to treat acute appendicitis. Appendicitis is the acute inflammation of this tube due to infection.",
       "img": "https://img.freepik.com/free-photo/pain-right-side-pain-liver-female-hand-touches-her-right-side-abdomen-closeup_197941-274.jpg?size=338&ext=jpg"
     },
     {
       "id": 2,
       "name": "Cataract surgery",
+      "cost":"300000",
       "desc": "Cataracts cloud the normally clear lens of the eyes. Cataract surgery involves the removal of the cloudy lens, which is replaced with a clear artificial lens implant.",
       "img": "https://img.freepik.com/free-photo/operation-eye-cataract-surgery-vision-correction_116317-6594.jpg?size=338&ext=jpg"
     },
     {
       "id": 3,
       "name": "Brain Tumor",
+      "cost":"800000",
       "desc": " A brain tumor is a collection, or mass, of abnormal cells in your brain. Your skull, which encloses your brain, is very rigid. Any growth inside such a restricted space can cause problems. Brain tumors can be cancerous (malignant) or noncancerous (benign)..",
       "img": "https://www.techexplorist.com/wp-content/uploads/2020/12/brain-tumor.jpeg"
     },
     {
       "id": 4,
       "name": "Hand Surgery",
+      "cost":"100000",
       "desc": "Hand surgery deals with both surgical and non-surgical treatment of conditions and problems that may take place in the hand or upper extremity including injury and infection. Hand surgery may be practiced by graduates of general surgery, orthopedic surgery and plastic surgery",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlbF5g3uQEwzSx-gD9-8TchOtNJ96sV67Mjg&usqp=CAU"
     },
     {
       "id": 5,
       "name": "Low back pain surgery",
+      "cost":"150000",
       "desc": "Low back pain can have various causes, including abnormal development of the backbone, stress on the back, injury, or a physical disorder that affects the bones of the spine. Usually, surgery is not considered until other options have been exhausted, including rest, medication, and mild exercise. The type of surgery done on the back depends on the diagnosis.",
       "img": "https://image.freepik.com/free-photo/physical-therapist-hand-pointing-human-skeleton-low-back-office-healthcare_42708-1122.jpg"
     },

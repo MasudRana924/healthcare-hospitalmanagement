@@ -3,13 +3,3 @@
     height:500px;
     width:100%;
 }
-.banner input{
-   margin-top: 220px;
-   position:absolute;
-   margin-left: 100px;
-   width:300px;
-   text-align: center;
-   outline: none;
-   border: 1px solid powderblue;
-   height: 40px;
-}

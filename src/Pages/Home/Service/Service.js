@@ -3,7 +3,8 @@ import { Col } from 'react-bootstrap';
 import { Link,useHistory } from 'react-router-dom';
 import './Service.css'
 const Service = (props) => {
-    const {name,img,desc}=props.service
+    const {id,name,img,desc}=props.service
+    const url = `/details/${id}`
     const history=useHistory()
     const handleAppoint=()=>{
        history.push('/appoint')
@@ -16,7 +17,7 @@ const Service = (props) => {
         </Link>
         <div>
            <h4>{name}</h4>
-           <p>{desc.slice(0,100)}...<Link to="/details">details</Link></p>
+           <p>{desc.slice(0,100)}...<Link to={url} className="text-decoration-none">details</Link></p>
         </div>
         <button  className=" button mb-5" onClick={handleAppoint}>Appointment</button>
         

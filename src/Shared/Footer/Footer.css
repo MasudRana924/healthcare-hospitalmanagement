@@ -2,8 +2,8 @@
   
 }
 .footer input{
-    width:450px;
-    border:1pxsolid black;
+    width:100%;
+    border:1px solid black;
     outline: white;
 }
 .insta-icon{

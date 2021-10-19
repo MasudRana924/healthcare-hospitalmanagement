@@ -10,7 +10,7 @@ const Services = () => {
         .then(data=>setServices(data))
     },[])
     return (
-       <Container fluid className="w-75 mx-auto mt-5">
+       <Container fluid className="w-75 mx-auto mt-5"  >
            <h2 className="text-center">Our Best Services</h2>
            <Row xs={1}md={3}>
                {

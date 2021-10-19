@@ -6,7 +6,7 @@ const Banner = () => {
     return (
        <Container fluid className="banner w-100">
            <div>
-           <input type="text" placeholder="Search here"  />
+           
            <img src={img} className="img-fluid" alt="" />
            </div>
          
