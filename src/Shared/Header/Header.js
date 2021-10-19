@@ -1,11 +1,13 @@
 import React from 'react';
-import { Col, Container, Nav, Navbar, Row } from 'react-bootstrap';
+import { Col, Container, Nav, Navbar, Row,Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhoneAlt, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 import './Header.css'
+import useAuth from './../../Hooks/useAuth';
 
 const Header = () => {
+    const{user,logOut}=useAuth()
     return (
         <>
             <Container fluid>
@@ -39,7 +41,7 @@ const Header = () => {
                             <Link to="/services" className="ms-3 ">Services</Link>
                             <Link to="/doctors" className="ms-3 ">Doctors</Link>
                             <Link to="/dept" className="ms-3 ">Dept</Link>
-                            <Link to="/appointment" className="ms-3 ">Appointment</Link>
+                            <Link to="/appoint" className="ms-3 ">Appointment</Link>
                             <Link to="/about" className="ms-3 ">About Us</Link>
                             <Link to="/contact" className="ms-3 ">Contact Us</Link>
 
@@ -48,6 +50,17 @@ const Header = () => {
 
                         <Navbar.Text>
 
+                        {
+                                user.email && <span className="sign-as me-3"> Signed in as: <span className="text-danger">{user.displayName}</span></span>
+                            }
+
+                            {
+                                user.email ? <Button onClick={logOut} variant="danger" size="sm">Logout</Button> : <Link to="/login">
+                                    <Button variant="success" size="sm" >
+                                    Sign-in
+                                    </Button>
+                                </Link>
+                            }
 
 
                         </Navbar.Text>

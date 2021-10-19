@@ -1,9 +1,14 @@
 import React from 'react';
 import { Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link,useHistory } from 'react-router-dom';
 import './Service.css'
 const Service = (props) => {
     const {name,img,desc}=props.service
+    const history=useHistory()
+    const handleAppoint=()=>{
+       history.push('/appoint')
+
+    }
     return (
         <Col className="mt-5 card-style">
             <Link to="/details">
@@ -13,6 +18,7 @@ const Service = (props) => {
            <h4>{name}</h4>
            <p>{desc.slice(0,100)}...<Link to="/details">details</Link></p>
         </div>
+        <button  className=" button mb-5" onClick={handleAppoint}>Appointment</button>
         
         </Col>
     );
