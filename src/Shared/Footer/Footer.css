@@ -1,9 +1,7 @@
-.footer{
-  
-}
+
 .footer input{
     width:100%;
-    border:1px solid black;
+    border:1px solid green;
     outline: white;
 }
 .insta-icon{
@@ -21,4 +19,11 @@
 .google-icon{
     color:royalblue;
     font-size: 25px;
+}
+.footer-anchor a{
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 10px;
+    padding-left: 20px;
+    
 }
