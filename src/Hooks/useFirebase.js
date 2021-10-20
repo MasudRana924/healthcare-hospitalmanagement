@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, updateProfile,GithubAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, updateProfile, GithubAuthProvider } from "firebase/auth";
 import initializeAuthentication from './firebase.initial';
 initializeAuthentication()
 const useFirebase = () => {
@@ -25,10 +25,10 @@ const useFirebase = () => {
 
 
     }
-    const githubProvider= new GithubAuthProvider()
-    const githubSignin=()=>{
+    const githubProvider = new GithubAuthProvider()
+    const githubSignin = () => {
         setIsLoading(true)
-       return signInWithPopup(auth, githubProvider)
+        return signInWithPopup(auth, githubProvider)
     }
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
@@ -58,19 +58,19 @@ const useFirebase = () => {
             setError('pass must be 6 character')
             return
         }
-       createUserWithEmailAndPassword(auth, email, pass)
-            .then(result => {
-                const user = result.user
-                console.log(user)
-                setError('')
-                // register korar por email verify
-                verifyEmail()
-                // name register por set korar jnno
-                setUserName()
-            })
-            .catch(error => {
-                setError(error.message)
-              })
+       return createUserWithEmailAndPassword(auth, email, pass)
+            // .then(result => {
+            //     const user = result.user
+            //     console.log(user)
+            //     setError('')
+            //     // register korar por email verify
+            //     verifyEmail()
+            //     // name register por set korar jnno
+            //     setUserName()
+            // })
+            // .catch(error => {
+            //     setError(error.message)
+            // })
     }
     // name 
     const setUserName = () => {
@@ -89,12 +89,12 @@ const useFirebase = () => {
             })
     }
     // 1. register 
-    const handleRegister = e => {
+    // const handleRegister = e => {
 
-        e.preventDefault()
-        console.log(email, pass)
-        isLogin ? signInProcress(email, pass) : createNewUser(email, pass)
-    }
+    //     e.preventDefault()
+    //     console.log(email, pass)
+    //     isLogin ? signInProcress(email, pass) : createNewUser(email, pass)
+    // }
     // 2. toogle login
     const toogleLogin = e => {
         setIsLogin(e.target.checked)
@@ -102,16 +102,16 @@ const useFirebase = () => {
     //  for signin 
     const signInProcress = (email, pass) => {
         setIsLoading(true)
-   signInWithEmailAndPassword(auth, email, pass)
-   signInProcress()
-    .then(result=>{
+     return   signInWithEmailAndPassword(auth, email, pass)
 
-    })
-    .finally(() =>
-            setIsLoading(false)
-        )
-        
-           
+            // .then(result => {
+
+            // })
+            // .finally(() =>
+            //     setIsLoading(false)
+            // )
+
+
     }
 
     //   logout process 
@@ -127,7 +127,7 @@ const useFirebase = () => {
     }
     return {
         user, googleSignIn, logOut,
-        isLoading, setIsLoading, error, handleEmail, handlePass, signInProcress, toogleLogin, isLogin,handleName,setError,githubSignin,handleRegister
+        isLoading, setIsLoading, error, handleEmail, handlePass, signInProcress, toogleLogin, isLogin, handleName, setError, githubSignin,createNewUser,verifyEmail,setUserName,email,pass
     }
 
 }
