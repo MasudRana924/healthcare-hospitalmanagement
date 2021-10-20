@@ -5,7 +5,7 @@ import useAuth from '../../Hooks/useAuth';
 import './Login.css'
 
 const Login = () => {
-    const { googleSignIn, setIsLoading, error, handleRegister, isLogin, handleEmail, handlePass, toogleLogin, handleName,setError} = useAuth()
+    const { googleSignIn, setIsLoading, error,handleRegister, isLogin, handleEmail, handlePass, toogleLogin, handleName, setError, githubSignin} = useAuth()
     const location = useLocation()
     const location_url = location.state?.from || '/home'
     const history = useHistory()
@@ -13,25 +13,39 @@ const Login = () => {
         googleSignIn()
             .then(result => {
                 history.push(location_url)
-             setError('')
+                setError('')
             })
             .finally(() =>
                 setIsLoading(false)
             )
     }
-    
+    const gitSignin = () => {
+        githubSignin()
+            .then(result => {
+               
+                history.push(location_url)
+                setError('')
+                
+            })
+            .finally(() =>
+                setIsLoading(false)
+            )
+    }
+
+  
 
     return (
         <Container fluid className="mt-3">
             <Row xs={1} md={3}>
                 <Col md={3}></Col>
-                <Col md={6}  className="form-style ">
+                <Col md={6} className="form-style ">
 
                     <h2 className="text-center text-success mt-5 mb-3">{isLogin ? 'Please login !!!' : 'Please create a account !!!'}</h2>
 
                     <Form onSubmit={handleRegister}>
-                    <button className="btn btn-success w-50 mt-5" onClick={handleGoogleLogIn }>Google-Signin</button> 
-                    <p className="mt-3 text-danger">--------OR--------</p>
+                        <Button variant="outline-success" className=" w-25 mt-5 me-3" onClick={handleGoogleLogIn}>Google-Signin</Button> 
+                        <Button variant="outline-info" className=" w-25 mt-5" onClick={gitSignin}>Github-Signin</Button>
+                        <p className="mt-3 text-danger">--------OR--------</p>
 
                         <Form.Group className="mb-3" controlId="formBasicEmail">
 
@@ -56,14 +70,14 @@ const Login = () => {
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
                             <Form.Check type="checkbox" label="Already have an account ? Login" className="text-start" onChange={toogleLogin} />
                         </Form.Group>
-                       
-                        <button type="submit" className="btn btn-success ms-1 mb-3 w-50 ">{isLogin ? 'Login' : 'Register'}</button>
+
+                        <Button type="submit" variant="outline-primary" className=" ms-1 mb-3 w-50 ">{isLogin ? 'Login' : 'Register'}</Button>
 
 
                     </Form>
-                  
-                  
-                       
+
+
+
 
 
 

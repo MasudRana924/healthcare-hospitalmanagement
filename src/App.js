@@ -34,12 +34,7 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
-          {/* <Route path="/services">
-            <Services></Services>
-          </Route>
-          <Route path="/doctors">
-            <Doctors></Doctors>
-          </Route> */}
+          
           <Route path="/dept">
             <Departments></Departments>
           </Route>

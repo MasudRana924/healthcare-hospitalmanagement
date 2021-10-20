@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, updateProfile } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, updateProfile,GithubAuthProvider } from "firebase/auth";
 import initializeAuthentication from './firebase.initial';
 initializeAuthentication()
 const useFirebase = () => {
@@ -24,6 +24,11 @@ const useFirebase = () => {
         return signInWithPopup(auth, googleProvider)
 
 
+    }
+    const githubProvider= new GithubAuthProvider()
+    const githubSignin=()=>{
+        setIsLoading(true)
+       return signInWithPopup(auth, githubProvider)
     }
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
@@ -53,7 +58,7 @@ const useFirebase = () => {
             setError('pass must be 6 character')
             return
         }
-       return createUserWithEmailAndPassword(auth, email, pass)
+       createUserWithEmailAndPassword(auth, email, pass)
             .then(result => {
                 const user = result.user
                 console.log(user)
@@ -97,13 +102,15 @@ const useFirebase = () => {
     //  for signin 
     const signInProcress = (email, pass) => {
         setIsLoading(true)
-       return signInWithEmailAndPassword(auth, email, pass)
-        .then(result=>{
+   signInWithEmailAndPassword(auth, email, pass)
+   signInProcress()
+    .then(result=>{
 
-        })
-        .finally(() =>
-                setIsLoading(false)
-            )
+    })
+    .finally(() =>
+            setIsLoading(false)
+        )
+        
            
     }
 
@@ -120,7 +127,7 @@ const useFirebase = () => {
     }
     return {
         user, googleSignIn, logOut,
-        isLoading, setIsLoading, error, handleEmail, handlePass, handleRegister, toogleLogin, isLogin,handleName,setError
+        isLoading, setIsLoading, error, handleEmail, handlePass, signInProcress, toogleLogin, isLogin,handleName,setError,githubSignin,handleRegister
     }
 
 }
