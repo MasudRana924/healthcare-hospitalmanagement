@@ -4,7 +4,7 @@ import { Link,  } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 
 const Signup = () => {
-    const {setIsLoading, error, handleEmail, handlePass, handleName, setError, createNewUser, verifyEmail, setUserName ,email,pass} =useAuth()
+    const {setIsLoading, error, handleEmail, handlePass, handleName, setError, createNewUser, verifyEmail,setUserName ,email,pass} =useAuth()
    
     
     return (
@@ -15,8 +15,8 @@ const Signup = () => {
 
                     <h2 className="text-center text-success mt-5 mb-3"> Please create a account </h2>
 
-                    <Form onSubmit={(e) =>{
-                          e.preventDefault()
+                    <Form onSubmit={(event) =>{
+                          event.preventDefault()
     
                    createNewUser(email,pass)
                     .then(result => {
@@ -24,6 +24,7 @@ const Signup = () => {
                         setError('')
                         verifyEmail()
                         setUserName()
+                       
                     })
                     .finally(() =>
                         setIsLoading(false)

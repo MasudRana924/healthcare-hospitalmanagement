@@ -58,11 +58,11 @@ const Header = () => {
                         <Navbar.Text>
 
                             {
-                                user.email && <span className="sign-as me-3"> Signed in as: <span className="text-danger">{user.displayName}</span></span>
+                                user.displayName && <span className="sign-as me-3"> Signed in as: <span className="text-danger">{user.displayName}</span></span>
                             }
 
                             {
-                                user.email ? <Button onClick={logOut} variant="danger" size="sm">Logout</Button> : <Link to="/login">
+                                user.displayName ? <Button onClick={logOut} variant="danger" size="sm">Logout</Button> : <Link to="/login">
                                     <Button variant="success" size="sm" >
                                         Sign-in
                                     </Button>

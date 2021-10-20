@@ -15,7 +15,7 @@ const useFirebase = () => {
     const [pass, setPass] = useState('')
     // pass 6 er kom hoile tar jonno state 
     const [error, setError] = useState('')
-    const [isLogin, setIsLogin] = useState(false)
+    
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider()
@@ -59,18 +59,7 @@ const useFirebase = () => {
             return
         }
        return createUserWithEmailAndPassword(auth, email, pass)
-            // .then(result => {
-            //     const user = result.user
-            //     console.log(user)
-            //     setError('')
-            //     // register korar por email verify
-            //     verifyEmail()
-            //     // name register por set korar jnno
-            //     setUserName()
-            // })
-            // .catch(error => {
-            //     setError(error.message)
-            // })
+        
     }
     // name 
     const setUserName = () => {
@@ -92,28 +81,11 @@ const useFirebase = () => {
                 console.log(result)
             })
     }
-    // 1. register 
-    // const handleRegister = e => {
-
-    //     e.preventDefault()
-    //     console.log(email, pass)
-    //     isLogin ? signInProcress(email, pass) : createNewUser(email, pass)
-    // }
-    // 2. toogle login
-    const toogleLogin = e => {
-        setIsLogin(e.target.checked)
-    }
+   
     //  for signin 
     const signInProcress = (email, pass) => {
         setIsLoading(true)
      return   signInWithEmailAndPassword(auth, email, pass)
-
-            // .then(result => {
-
-            // })
-            // .finally(() =>
-            //     setIsLoading(false)
-            // )
 
 
     }
@@ -131,7 +103,7 @@ const useFirebase = () => {
     }
     return {
         user, googleSignIn, logOut,
-        isLoading, setIsLoading, error, handleEmail, handlePass, signInProcress, toogleLogin, isLogin, handleName, setError, githubSignin,createNewUser,verifyEmail,setUserName,email,pass
+        isLoading, setIsLoading, error, handleEmail, handlePass, signInProcress, handleName, setError, githubSignin,createNewUser,verifyEmail,setUserName,email,pass
     }
 
 }
