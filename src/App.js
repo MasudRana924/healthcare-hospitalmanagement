@@ -34,12 +34,12 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
-          <Route path="/services">
+          {/* <Route path="/services">
             <Services></Services>
           </Route>
           <Route path="/doctors">
             <Doctors></Doctors>
-          </Route>
+          </Route> */}
           <Route path="/dept">
             <Departments></Departments>
           </Route>

@@ -7,13 +7,13 @@ import Hospitality from './Hospitality/Hospitality';
 
 const Home = () => {
     return (
-         <>
+         <div id="home">
          <Banner></Banner>
-         <Services></Services>
+         <Services ></Services>
          <HealthPlanes></HealthPlanes>
          <Doctors></Doctors>
          <Hospitality></Hospitality>
-         </>
+         </div>
     );
 };
 

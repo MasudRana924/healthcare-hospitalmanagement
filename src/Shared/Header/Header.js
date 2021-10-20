@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhoneAlt, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 import './Header.css'
 import useAuth from './../../Hooks/useAuth';
+import { HashLink } from 'react-router-hash-link';
 
 
 const Header = () => {
@@ -42,14 +43,14 @@ const Header = () => {
                     <Navbar.Toggle className=" text-success bg-success" />
                     <Navbar.Collapse className="justify-content-end">
                         <Nav className="me-auto nav-anchor">
-                            <Link to="/home" className="ms-3 ">Home</Link>
-                            <Link to="/services" className="ms-3 ">Services</Link>
-                            <Link to="/doctors" className="ms-3 ">Doctors</Link>
-                            <Link to="/dept" className="ms-3 ">Dept</Link>
-                            <Link to="/appoint" className="ms-3 ">Appointment</Link>
-                            <Link to="/event" className="ms-3 ">Event</Link>
-                            <Link to="/about" className="ms-3 ">About</Link>
-                            <Link to="/contact" className="ms-3 ">Contact </Link>
+                            <Nav.Link as={HashLink} to="/home#home" className="ms-1 ">Home</Nav.Link>
+                            <Nav.Link as={HashLink} to="/home#services" className="ms-1 ">Services</Nav.Link>
+                            <Nav.Link as={HashLink} to="/home#doctors" className="ms-1 ">Doctors</Nav.Link>
+                            <Nav.Link as={HashLink} to="/dept" className="ms-1 ">Dept</Nav.Link>
+                            <Nav.Link as={HashLink} to="/appoint" className="ms-1 ">Appointment</Nav.Link>
+                            <Nav.Link as={HashLink} to="/event" className="ms-1 ">Event</Nav.Link>
+                            <Nav.Link as={HashLink}to="/about" className="ms-1 ">About</Nav.Link>
+                            <Nav.Link as={HashLink} to="/contact" className="ms-1 ">Contact </Nav.Link>
 
                         </Nav>
 

@@ -10,6 +10,9 @@ const Doctors = () => {
         .then(data=>setDoctors(data))
     },[])
     return (
+        <div id="doctors">
+
+     
       <Container fluid className="mt-5 pt-5 w-75 mx-auto">
           <h2 className="text-dark">Our Experienced Doctors</h2>
           <Row xs={1} md={3}>
@@ -19,6 +22,7 @@ const Doctors = () => {
               ></Doctor>)}
           </Row>
       </Container>
+      </div>
     );
 };
 

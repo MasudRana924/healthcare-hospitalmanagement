@@ -5,8 +5,7 @@ import useAuth from '../../Hooks/useAuth';
 import './Login.css'
 
 const Login = () => {
-    const { googleSignIn, setIsLoading, error, handleRegister, isLogin, handleEmail, handlePass, toogleLogin, handleName,setError
-    } = useAuth()
+    const { googleSignIn, setIsLoading, error, handleRegister, isLogin, handleEmail, handlePass, toogleLogin, handleName,setError} = useAuth()
     const location = useLocation()
     const location_url = location.state?.from || '/home'
     const history = useHistory()
@@ -20,6 +19,7 @@ const Login = () => {
                 setIsLoading(false)
             )
     }
+    
 
     return (
         <Container fluid className="mt-3">

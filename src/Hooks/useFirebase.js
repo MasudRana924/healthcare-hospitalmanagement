@@ -53,7 +53,7 @@ const useFirebase = () => {
             setError('pass must be 6 character')
             return
         }
-        createUserWithEmailAndPassword(auth, email, pass)
+       return createUserWithEmailAndPassword(auth, email, pass)
             .then(result => {
                 const user = result.user
                 console.log(user)
@@ -96,11 +96,15 @@ const useFirebase = () => {
     }
     //  for signin 
     const signInProcress = (email, pass) => {
-        signInWithEmailAndPassword(auth, email, pass)
-            .then(result => {
-                const user = result.user
-                console.log(user)
-            })
+        setIsLoading(true)
+       return signInWithEmailAndPassword(auth, email, pass)
+        .then(result=>{
+
+        })
+        .finally(() =>
+                setIsLoading(false)
+            )
+           
     }
 
     //   logout process 
