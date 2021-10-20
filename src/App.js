@@ -18,7 +18,7 @@ import Services from './Pages/Services/Services';
 import Doctors from './Pages/Home/Doctors/Doctors';
 import Contact from './Pages/Contact/Contact';
 import NotFound from './Pages/NotFound/NotFound'
-import SignUp from './Pages/SignUp/SignUp';
+
 import Details from './Pages/Details/Details';
 
 function App() {
@@ -56,9 +56,7 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
-          <Route path="/signup">
-            <SignUp></SignUp>
-          </Route>
+        
           <Route path="/confirm">
             <Confirm></Confirm>
           </Route>

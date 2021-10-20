@@ -19,7 +19,7 @@ const Service = (props) => {
            <h4>{name}</h4>
            <p>{desc.slice(0,100)}...<Link to={url} className="text-decoration-none">details</Link></p>
         </div>
-        <button  className=" button mb-5" onClick={handleAppoint}>Appointment</button>
+        <button  className="button mb-5" onClick={handleAppoint}>Appointment</button>
         
         </Col>
     );

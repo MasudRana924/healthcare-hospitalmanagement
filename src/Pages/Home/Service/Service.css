@@ -2,4 +2,8 @@
     height:200px;
     width:100%;
 }
-
+.button{
+    background-color:  #4CAF50;
+    border: #4CAF50;
+    height:35px;
+}
