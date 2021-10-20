@@ -14,7 +14,7 @@ const Login = () => {
         googleSignIn()
             .then(result => {
                 history.push(location_url)
-                setError('')
+             setError('')
             })
             .finally(() =>
                 setIsLoading(false)
@@ -25,7 +25,7 @@ const Login = () => {
         <Container fluid className="mt-3">
             <Row xs={1} md={3}>
                 <Col md={3}></Col>
-                <Col md={6} className="form-style ">
+                <Col md={6}  className="form-style ">
 
                     <h2 className="text-center text-success mt-5 mb-3">{isLogin ? 'Please login !!!' : 'Please create a account !!!'}</h2>
 
