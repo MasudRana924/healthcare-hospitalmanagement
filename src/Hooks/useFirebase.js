@@ -74,12 +74,16 @@ const useFirebase = () => {
     }
     // name 
     const setUserName = () => {
+        setIsLoading(true)
         updateProfile(auth.currentUser, {
             displayName: name,
         }).then(result => {
             // Profile updated!
             // ...
         })
+        .finally(() =>
+        setIsLoading(false)
+    )
     }
     // email verify 
     const verifyEmail = () => {

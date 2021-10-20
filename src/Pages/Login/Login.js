@@ -59,12 +59,11 @@ const Login = () => {
                     
                     : createNewUser(email,pass)
                     .then(result => {
-
-                        history.push(location_url)
-                        setError('')
+                        alert('Your account is created plz login')
                         setUserName()
+                        setError('')
                         verifyEmail()
-        
+                  
                     })
                     .finally(() =>
                         setIsLoading(false)
