@@ -5,7 +5,7 @@ import useAuth from '../../Hooks/useAuth';
 import './Login.css'
 
 const Login = () => {
-    const { googleSignIn, setIsLoading, error, isLogin, handleEmail, handlePass, toogleLogin, handleName, setError, githubSignin,signInProcress, createNewUser, verifyEmail, setUserName ,email,pass} = useAuth()
+    const { googleSignIn, setIsLoading, error, handleEmail, handlePass, handleName, setError, githubSignin,signInProcress,email,pass} =useAuth()
     const location = useLocation()
     const location_url = location.state?.from || '/home'
     const history = useHistory()
@@ -40,34 +40,20 @@ const Login = () => {
                 <Col md={3}></Col>
                 <Col md={6} className="form-style ">
 
-                    <h2 className="text-center text-success mt-5 mb-3">{isLogin ? 'Please login !!!' : 'Please create a account !!!'}</h2>
+                    <h2 className="text-center text-success mt-5 mb-3"> 'Please login !!!'</h2>
 
                     <Form onSubmit={(e) =>{
                           e.preventDefault()
     
-                    isLogin ? signInProcress(email,pass)
+                   signInProcress(email,pass)
                     .then(result => {
-
-                        history.push(location_url)
+                        history.push('/appoint')
                         setError('')
-        
                     })
                     .finally(() =>
                         setIsLoading(false)
-                    )
-                    
-                    
-                    : createNewUser(email,pass)
-                    .then(result => {
-                        alert('Your account is created plz login')
-                        setUserName()
-                        setError('')
-                        verifyEmail()
-                  
-                    })
-                    .finally(() =>
-                        setIsLoading(false)
-                    )
+                    )        
+                   
                     }}
                     >
                     <Button variant="outline-success" className=" w-25 mt-5 me-3" onClick={handleGoogleLogIn}>Google-Signin</Button>
@@ -94,11 +80,9 @@ const Login = () => {
                         <p className="text-start text-muted"> Password should be more than 6 characters</p>
                         <p className="text-start text-danger"> {error}</p>
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Already have an account ? Login" className="text-start" onChange={toogleLogin} />
-                    </Form.Group>
+                    <p className="text-start">Already haven't a account ? <Link className="text-decoration-none fs-6" to="/signup">Go to Signup</Link></p>
 
-                    <Button type="submit" variant="outline-primary" className=" ms-1 mb-3 w-50 ">{isLogin ? 'Login' : 'Register'}</Button>
+                    <Button type="submit" variant="outline-primary" className=" ms-1 mb-3 w-50 ">Login</Button>
 
 
                 </Form>

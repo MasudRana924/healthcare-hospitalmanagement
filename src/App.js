@@ -19,6 +19,7 @@ import Contact from './Pages/Contact/Contact';
 import NotFound from './Pages/NotFound/NotFound'
 
 import Details from './Pages/Details/Details';
+import Signup from './Pages/SignUp/Signup';
 
 
 function App() {
@@ -51,7 +52,9 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
-         
+         <Route path="/signup">
+           <Signup></Signup>
+         </Route>
         
           <Route path="/confirm">
             <Confirm></Confirm>
