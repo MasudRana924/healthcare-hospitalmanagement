@@ -59,16 +59,10 @@ const Login = () => {
                    
                     }}
                     >
-                    <Button variant="outline-success" className=" w-25 mt-5 me-3" onClick={handleGoogleLogIn}>Google-Signin</Button>
-                    <Button variant="outline-info" className=" w-25 mt-5" onClick={gitSignin}>Github-Signin</Button>
+                    <Button variant="outline-secondary" className=" w-50 mt-5 me-3" onClick={handleGoogleLogIn}>Google-Signin</Button>
+                  
                     <p className="mt-3 text-danger">--------OR--------</p>
 
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-
-                        <Form.Control type="name" placeholder="Enter Your Name" onBlur={handleName} />
-
-
-                    </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <p className="text-start">Email </p>
                         <Form.Control type="email" placeholder="Enter Your Email" onBlur={handleEmail} />

@@ -38,13 +38,7 @@ const Signup = () => {
                    
                     }}
                     >
-                    
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-
-                        <Form.Control type="name" placeholder="Enter Your Name" onBlur={handleName} />
-
-
-                    </Form.Group>
+                
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <p className="text-start">Email </p>
                         <Form.Control type="email" placeholder="Enter Your Email" onBlur={handleEmail} />
