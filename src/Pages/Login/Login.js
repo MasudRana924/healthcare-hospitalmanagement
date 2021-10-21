@@ -47,9 +47,12 @@ const Login = () => {
     
                    signInProcress(email,pass)
                     .then(result => {
-                        history.push('/appoint')
+                        history.push(location_url)
                         setError('')
                     })
+                    .catch(error => {
+                        setError('Username & Email is not valid')
+                      })
                     .finally(() =>
                         setIsLoading(false)
                     )        

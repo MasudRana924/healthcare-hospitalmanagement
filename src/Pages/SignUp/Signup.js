@@ -1,11 +1,13 @@
 import React from 'react';
 import { Col, Container,Button, Form, Row } from 'react-bootstrap';
-import { Link,  } from 'react-router-dom';
+import { Link,useLocation ,useHistory } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 
 const Signup = () => {
     const {setIsLoading, error, handleEmail, handlePass, handleName, setError, createNewUser, verifyEmail,setUserName ,email,pass} =useAuth()
-   
+    const location = useLocation()
+    const location_url = location.state?.from || '/home'
+    const history = useHistory()
     
     return (
         <Container fluid className="mt-5">
@@ -20,12 +22,16 @@ const Signup = () => {
     
                    createNewUser(email,pass)
                     .then(result => {
-                      alert('Your account created successfully please go to login and be login')
-                        setError('')
+                      history.push(location_url)
+                      setError('')  
+                      setUserName()
                         verifyEmail()
-                        setUserName()
+                      
                        
                     })
+                    .catch(error => {
+                        setError('Enter a valid email')
+                      })
                     .finally(() =>
                         setIsLoading(false)
                     )        
